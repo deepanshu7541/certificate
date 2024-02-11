@@ -7,7 +7,9 @@ const cors = require('cors')
 const app = express();
 const mainRouter = require("./routes/user");
 const dummyCertificates = require('./dummyData/dummyCertificate');
+const dummyUserData = require('./dummyData/dummyUserData.js');
 const CertificateModel = require("./models/Cid");
+const UserModel = require('./models/User');
 
 app.use(express.json());
 
@@ -19,7 +21,9 @@ const port = process.env.PORT || 3000;
 
 //Seeding data from json file to the database.
 const seedDB = async() => {
-    await CertificateModel.insertMany(dummyCertificates);
+    // await UserModel.deleteMany({})     //It will delete already existing data in the database.
+    // await CertificateModel.insertMany(dummyCertificates);
+    // await UserModel.insertMany(dummyUserData);
 }
 // seedDB().then(() => {
 //     console.log("Database seeded successfully");

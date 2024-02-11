@@ -8,7 +8,9 @@ const authMiddleware = require('../middleware/auth')
 
 router.route("/login").post(login);
 router.route("/register").post(register);
+// router.route("/dashboard").get(authMiddleware, dashboard);
 router.route("/dashboard").get(authMiddleware, dashboard);
+// router.route("/dashboard").get(profile);
 router.route("/certificates/:cid").get(verify);
 // router.get('/dashboard', authenticateToken, async (req, res) => {
 //     try {

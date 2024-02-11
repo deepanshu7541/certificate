@@ -1,6 +1,7 @@
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import { Dashboard, HomeLayout, Landing, Login, Logout, Register } from "./pages";
 import { ToastContainer, toast } from 'react-toastify';
+import './styles/style.css'
 
 const router = createBrowserRouter([
   {

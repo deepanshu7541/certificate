@@ -27,7 +27,7 @@ const UserSchema = new mongoose.Schema({
         minlength: 3,
     },
 
-    certificates: [{ type: mongoose.Schema.Types.ObjectId, ref: 'Certificate' }],
+    certificate: [{ type: mongoose.Schema.Types.ObjectId, ref: 'Certificate' }],
 
     profileURL: {
         type: String
@@ -40,8 +40,17 @@ const UserSchema = new mongoose.Schema({
         default: 0,
     },
     skills: [{
-        type: String,
-        trim: true
+        topic: {
+            type: String,
+            trim: true,
+            required: true
+        },
+        percentage: {
+            type: Number,
+            min: 0,
+            max: 100,
+            required: true
+        }
     }],
     socialProfiles: {
         linkedin: {

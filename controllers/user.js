@@ -50,17 +50,34 @@ const login = async (req, res) => {
 };
 
 
-const dashboard = async (req, res) => {
-  console.log('req:', req.user);
-  const luckyNumber = Math.floor(Math.random() * 100);
+// const dashboard = async (req, res) => {
+//   console.log('req:', req.user);
+//   const luckyNumber = Math.floor(Math.random() * 100);
 
-  res.status(200).json({
-    // data: req,
-    name: `Hello, ${req.user.name}`,
-    email: `Hi ${req.user.email}`,
-    secret: `Here is your authorized data, your lucky number is ${luckyNumber}`,
-  });
-};
+//   res.status(200).json({
+//     // data: req,
+//     name: `Hello, ${req.user.name}`,
+//     email: `Hi ${req.user.email}`,
+//     secret: `Here is your authorized data, your lucky number is ${luckyNumber}`,
+//   });
+// };
+
+const dashboard = async (req, res) => {
+  // console.log("Inside dashboard");
+
+  try {
+    // Fetch user profile data from the database
+    const userProfile = await User.findOne({ email: req.user.email });
+
+    // Send the user profile data as JSON response
+    // console.log(userProfile);
+    res.json(userProfile);
+  } catch (error) {
+    // Handle errors
+    console.error('Error fetching user profile data:', error);
+    res.status(500).json({ error: 'Internal server error' });
+  }
+}
 
 const getAllUsers = async (req, res) => {
   let users = await User.find({});
@@ -108,7 +125,6 @@ const verify = async(req, res) => {
     res.status(500).json({ message: 'Internal server error' });
   }
 }
-
 
 module.exports = {
   login,
