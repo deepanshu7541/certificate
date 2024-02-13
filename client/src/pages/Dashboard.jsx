@@ -1,7 +1,7 @@
 import React from 'react'
 import SkillsScroller from './SkillsScroller';
 import { Helmet } from 'react-helmet'
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useContext } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import axios from 'axios';
@@ -10,6 +10,10 @@ import FeatureCard from '../components/feature-card';
 import BlogPostCard1 from '../components/blog-post-card1';
 import Question1 from '../components/question1';
 import '../styles/home.css';
+
+import Marquee from "react-fast-marquee";
+import { skillsData } from './skillsData';
+import { skillsImage } from './skillsImage';
 
 const Home = (props) => {
   const [token, setToken] = useState(JSON.parse(localStorage.getItem('auth')) || '');
@@ -49,6 +53,15 @@ const Home = (props) => {
       toast.warn('Please login first to access the dashboard');
     }
   }, [token]);  
+
+
+
+    // const { theme } = useContext(ThemeContext);
+
+    const skillBoxStyle = {
+        // backgroundColor: ,
+        boxShadow: `0px 0px 30px red`
+    }
 
   return (
     <div className="home-container">
@@ -189,11 +202,11 @@ const Home = (props) => {
         <div className="home-features-container featuresContainer">
           <div className="home-features1">
             <div className="home-container04">
-              <h2 className="home-features-heading heading2">Skills</h2>
+              {/* <h2 className="home-features-heading heading2">Skills</h2> */}
               <span className="home-features-sub-heading bodyLarge">
                 <span>
                   <span>
-                    <span>Enhance your profile with these key features</span>
+                    {/* <span>Enhance your profile with these key features</span> */}
                     <span>
                       <span
                         dangerouslySetInnerHTML={{
@@ -255,16 +268,41 @@ const Home = (props) => {
                 </span>
               </span>
             </div>
-            <div className="home-container05">
+            <div className="skills-scroller-container">
+              <h2 className="skills-heading">Skills</h2>
+              <div className="skills-scroller">
+                {profileData.skills && profileData.skills.map((skillItem, index) => (
+                  <div key={index} className="skill-item">
+                    <div className="skill-name">{skillItem.topic}</div>
+                    <div className="skill-bar">
+                      <div
+                        className="skill-progress"
+                        style={{ width: `${skillItem.percentage}%` }}
+                      >
+                        {skillItem.percentage}%
+                      </div>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+            {/* <div className="home-container05">
             {profileData.skills && profileData.skills.map((skill, idx) => (
-                <div key={idx}>
-                      <FeatureCard
-                      heading={skill.topic}
-                      subHeading={`${skill.percentage}%`}
-                      // key={idx} // Add a unique key for each FeatureCard
-                    ></FeatureCard>
-                </div>
+              <div className="hello" key={idx}>
+                <FeatureCard
+                  heading={skill.topic}
+                  subHeading={`${skill.percentage}%`}
+                />
+                <Box sx={{ width: 300 }}>
+                  <span>{skill.percentage}</span>
+                  <span>
+                  <Slider hideThumb={true} disabled={true} defaultValue={skill.percentage} aria-label="Default" valueLabelDisplay="auto" />
+                  </span>
+                </Box>
+              </div>
             ))}
+          </div> */}
+
               {/* <FeatureCard
                 heading="Skills"
                 subHeading="Showcase your skills in rectangular boxes"
@@ -281,7 +319,7 @@ const Home = (props) => {
                 heading="Skills"
                 subHeading="Skills demo"
               ></FeatureCard> */}
-            </div>
+            {/* </div> */}
           </div>
         </div>
       </div>
@@ -289,13 +327,13 @@ const Home = (props) => {
         <div className="home-pricing1 pricingContainer">
           <div className="home-container06">
             <h2 className="heading2">Certificates</h2>
-            <span className="home-pricing-sub-heading bodyLarge">
+            {/* <span className="home-pricing-sub-heading bodyLarge">
               <span>
                 <span>
                   Unlock amazing features with our flexible pricing options
                 </span>
               </span>
-            </span>
+            </span> */}
           </div>
           <div className="home-container07"></div>
           <div className="home-container08">
@@ -363,6 +401,33 @@ const Home = (props) => {
           </div>
         </footer>
       </div>
+      <div id ="skills"className="skills">
+            <div className="skillsHeader">
+                <h2>Tools</h2>
+            </div>
+            <div className="skillsContainer">
+                <div className="skill--scroll">
+                    <Marquee 
+                        gradient={false} 
+                        speed={80} 
+                        pauseOnHover={true}
+                        pauseOnClick={true} 
+                        delay={0}
+                        play={true} 
+                        direction="left"
+                    >
+                        {skillsData.map((skill, id) => (
+                            <div className="skill--box" key={id} style={skillBoxStyle}>
+                                <img src={skillsImage(skill)} alt={skill} />
+                                <h3>
+                                    {skill}
+                                </h3>
+                            </div>
+                        ))}
+                    </Marquee>
+                </div>
+            </div>
+        </div>
       <Link to="/logout" className="logout-button">Logout</Link>
     </div>
     
