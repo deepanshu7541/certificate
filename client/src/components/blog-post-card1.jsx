@@ -14,37 +14,43 @@ const BlogPostCard1 = (props) => {
       />
       <div className="blog-post-card1-container">
         <span className="blog-post-card1-text">{props.label}</span>
+        <button type="button" className="button">
+          {props.download}
+        </button>
       </div>
     </div>
   )
 }
 
 BlogPostCard1.defaultProps = {
-  profileAlt: 'profile',
-  label: 'CPD UK',
-  title: '',
-  rootClassName: '',
-  imageAlt: 'image',
-  description: '',
-  profileSrc:
-    'https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?ixid=Mnw5MTMyMXwwfDF8c2VhcmNofDd8fG1hbiUyMHBvcnRyYWl0fGVufDB8fHx8MTYyNjQzMTMwMw&ixlib=rb-1.2.1&h=1200',
+  time: '5 min read',
+  title: 'Lorem ipsum dolor sit amet',
   imageSrc:
     'https://images.unsplash.com/photo-1547841243-eacb14453cd9?ixid=Mnw5MTMyMXwwfDF8c2VhcmNofDIyfHxjaXR5fGVufDB8fHx8MTYyNjE4NjYxMg&ixlib=rb-1.2.1&w=1000',
+  profileAlt: 'Download',
   author: 'Jon Doe',
-  time: '5 min read',
+  rootClassName: '',
+  label: 'ENTERPRISE',
+  download: 'Download',
+  description:
+    'Lorem ipsum dolor sit amet, consectetur, adipiscing elit. Sed non volutpat turpis.  ​ Mauris luctus rutrum mi ut rhoncus. Integer in dignissim tortor. Lorem  ​​ ipsum dolor sit amet, consectetur adipiscing elit.',
+  imageAlt: 'image',
+  profileSrc:
+    'https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?ixid=Mnw5MTMyMXwwfDF8c2VhcmNofDd8fG1hbiUyMHBvcnRyYWl0fGVufDB8fHx8MTYyNjQzMTMwMw&ixlib=rb-1.2.1&h=1200',
 }
 
 BlogPostCard1.propTypes = {
-  profileAlt: PropTypes.string,
-  label: PropTypes.string,
-  title: PropTypes.string,
-  rootClassName: PropTypes.string,
-  imageAlt: PropTypes.string,
-  description: PropTypes.string,
-  profileSrc: PropTypes.string,
-  imageSrc: PropTypes.string,
-  author: PropTypes.string,
   time: PropTypes.string,
+  title: PropTypes.string,
+  imageSrc: PropTypes.string,
+  profileAlt: PropTypes.string,
+  author: PropTypes.string,
+  rootClassName: PropTypes.string,
+  label: PropTypes.string,
+  download: PropTypes.string,
+  description: PropTypes.string,
+  imageAlt: PropTypes.string,
+  profileSrc: PropTypes.string,
 }
 
 export default BlogPostCard1

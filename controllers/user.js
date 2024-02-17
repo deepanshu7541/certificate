@@ -68,7 +68,6 @@ const dashboard = async (req, res) => {
   try {
     // Fetch user profile data from the database
     const userProfile = await User.findOne({ email: req.user.email });
-
     // Send the user profile data as JSON response
     // console.log(userProfile);
     res.json(userProfile);

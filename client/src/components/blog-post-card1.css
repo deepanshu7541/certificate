@@ -35,6 +35,14 @@
 
 
 
+@media(max-width: 1600px) {
+  .blog-post-card1-root-class-name1 {
+    width: 100%;
+  }
+  .blog-post-card1-root-class-name2 {
+    max-width: auto;
+  }
+}
 @media(max-width: 991px) {
   .blog-post-card1-image {
     height: 350px;
