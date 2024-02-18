@@ -9,9 +9,11 @@ import FeatureCard21 from '../components/feature-card21';
 import BlogPostCard1 from '../components/blog-post-card1';
 import '../styles/home.css';
 
+import FeatureCard1 from '../components/feature-card1';
 import Marquee from "react-fast-marquee";
 import { skillsData } from './skillsData';
 import { skillsImage } from './skillsImage';
+
 
 const Home = (props) => {
   const [token, setToken] = useState(JSON.parse(localStorage.getItem('auth')) || '');
@@ -179,7 +181,7 @@ const Home = (props) => {
             {arr.map((item, idx) => (
               <a key={idx} href={item} target="_blank" rel="noopener noreferrer">
                 <BlogPostCard1
-                  imageSrc="https://images.unsplash.com/photo-1464938050520-ef2270bb8ce8?ixid=Mnw5MTMyMXwwfDF8c2VhcmNofDE4fHxjaXR5fGVufDB8fHx8MTYyNjQ1MDI4MQ&amp;ixlib=rb-1.2.1&amp;h=1200"
+                  imageSrc="https://certification.metafiser.tech/wp-content/uploads/2024/01/H-Colour.png"
                   rootClassName="rootClassName1"
                 ></BlogPostCard1>
               </a>
@@ -219,6 +221,55 @@ const Home = (props) => {
                 {/* <FeatureCard21 rootClassName="rootClassName3"></FeatureCard21> */}
                 {/* <FeatureCard21 rootClassName="rootClassName2"></FeatureCard21> */}
                 {/* <FeatureCard21 rootClassName="rootClassName1"></FeatureCard21> */}
+              </div>
+            </div>
+          </div>
+        </div>
+        <div className="home-container69">
+          <div className="home-container169">
+            <div className="home-features69">
+              <h1 className="home-text69">Tools</h1>
+              <div className="home-container269">
+                <FeatureCard1
+                  title="HTML"
+                  imageSrc="https://www.w3.org/html/logo/downloads/HTML5_Badge_512.png"
+                  rootClassName="rootClassName"
+                ></FeatureCard1>
+                <FeatureCard1
+                  title="JavaScript"
+                  imageSrc="https://cdn.iconscout.com/icon/premium/png-256-thumb/javascript-2752148-2284965.png?f=webp"
+                  rootClassName="rootClassName1"
+                ></FeatureCard1>
+                <FeatureCard1
+                  title="React"
+                  imageSrc="https://upload.wikimedia.org/wikipedia/commons/thumb/3/30/React_Logo_SVG.svg/1200px-React_Logo_SVG.svg.png"
+                  rootClassName="rootClassName2"
+                ></FeatureCard1>
+                <FeatureCard1
+                  title="MongoDB"
+                  imageSrc="https://cdn.icon-icons.com/icons2/2415/PNG/512/mongodb_original_wordmark_logo_icon_146425.png"
+                  rootClassName="rootClassName7"
+                ></FeatureCard1>
+                <FeatureCard1
+                  title="CSS"
+                  imageSrc="https://logowik.com/content/uploads/images/123_css3.jpg"
+                  rootClassName="rootClassName3"
+                ></FeatureCard1>
+                <FeatureCard1
+                  title="MySQL"
+                  imageSrc="https://upload.wikimedia.org/wikipedia/commons/7/7b/MySQL_Dolphin.jpg"
+                  rootClassName="rootClassName6"
+                ></FeatureCard1>
+                <FeatureCard1
+                  title="Node Js"
+                  imageSrc="https://static-00.iconduck.com/assets.00/node-js-icon-227x256-913nazt0.png"
+                  rootClassName="rootClassName5"
+                ></FeatureCard1>
+                <FeatureCard1
+                  title="Angular"
+                  imageSrc="https://cdn4.iconfinder.com/data/icons/logos-and-brands/512/21_Angular_logo_logos-512.png"
+                  rootClassName="rootClassName4"
+                ></FeatureCard1>
               </div>
             </div>
           </div>

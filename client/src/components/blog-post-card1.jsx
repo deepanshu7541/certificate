@@ -13,7 +13,7 @@ const BlogPostCard1 = (props) => {
         className="blog-post-card1-image"
       />
       <div className="blog-post-card1-container">
-        <span className="blog-post-card1-text">{props.label}</span>
+        <span className="blog-post-card1-text">CPD UK certificate</span>
         <button type="button" className="button">
           {props.download}
         </button>
