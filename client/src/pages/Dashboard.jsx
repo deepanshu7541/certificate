@@ -18,6 +18,7 @@ const Home = (props) => {
   const [userData, setUserData] = useState({});
   const navigate = useNavigate();
   const [profileData, setProfileData] = useState({});
+  const [arr, setarr] = useState([]);
 
   const fetchUserData = async () => {
     if (token === '') {
@@ -37,18 +38,62 @@ const Home = (props) => {
       setProfileData(response.data);
       console.log("Hello");
       console.log(profileData);
-      // console.log(profileData.name);
+      console.log(profileData.name);
     } catch (error) {
       toast.error(error.message);
     }
     // console.log(userData);
   };
 
+  // const fetchCertificate = async () => {
+  //   const certi = profileData.cid;
+  //   console.log("Certi");
+  //   console.log(certi);
+  //   // certi.foreach(help);
+
+  //   for(let i=0; i<certi.length; i++){
+  //     async function help(c) {
+  //       try {
+  //           const url = await axios.get(`http://localhost:3000/api/v1/certificates/${c}`);
+  //           console.log("My data");
+  //           console.log(url.data);
+  //       } catch (error) {
+  //           // Handle errors
+  //           console.error('Error:', error);
+  //       }
+  //     }
+  //   }
+  // }
+
   const fetchCertificate = async () => {
-    var certi = profileData.certificates;
-    console.log("Certi");
+    const dd = [];
+    const certi = profileData.cid;
+    console.log("Certificates:");
     console.log(certi);
-  }
+
+    for (let i = 0; i < certi.length; i++) {
+        const c = certi[i];
+        try {
+            const url = await axios.get(`http://localhost:3000/api/v1/certificates/${c}`);
+            console.log("URL Data:");
+            console.log(url);
+
+            dd.push(url.data.certificateURL);
+            console.log("Certificate Data:");
+            // console.log(url.data.certificateURL);
+            console.log(dd);
+        } catch (error) {
+            console.error('Error fetching certificate:', error);
+        }
+    }
+
+    console.log('ABCD');
+    setarr(dd); // Assuming setarr is a state setter function
+    console.log(setarr);
+    console.log('EFGH');
+}
+
+
 
   useEffect(() => {
     fetchUserData();
@@ -127,7 +172,18 @@ const Home = (props) => {
             <br />
           </div>
           <div className="home-container08">
-            <div className="home-blog">
+          <div className='home-blog'>
+            {arr.map((item, idx) => (
+              <a key={idx} href={item} target="_blank" rel="noopener noreferrer">
+                <BlogPostCard1
+                  imageSrc="https://images.unsplash.com/photo-1464938050520-ef2270bb8ce8?ixid=Mnw5MTMyMXwwfDF8c2VhcmNofDE4fHxjaXR5fGVufDB8fHx8MTYyNjQ1MDI4MQ&amp;ixlib=rb-1.2.1&amp;h=1200"
+                  rootClassName="rootClassName1"
+                ></BlogPostCard1>
+              </a>
+            ))}
+          </div>
+
+            {/* <div className="home-blog">
               <div className="home-container09">
                 <BlogPostCard1 rootClassName="rootClassName3"></BlogPostCard1>
               </div>
@@ -143,7 +199,7 @@ const Home = (props) => {
                   rootClassName="rootClassName1"
                 ></BlogPostCard1>
               </div>
-            </div>
+            </div> */}
           </div>
         </div>
         <div className="home-container12">

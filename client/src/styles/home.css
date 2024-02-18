@@ -6,6 +6,7 @@
   align-items: center;
   flex-direction: column;
   justify-content: flex-start;
+  background-color: #F7F4FF;
 }
 .home-container01 {
   width: 100%;
@@ -386,6 +387,8 @@
   display: flex;
   flex-direction: column;
   max-width: 1000px; /* Adjust as needed */
+  margin-left: 25%;
+  margin-right: 25%;
 }
 
 .skill-item {

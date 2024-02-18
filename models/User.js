@@ -25,7 +25,9 @@ const UserSchema = new mongoose.Schema({
         required: [true, 'Please provide password'],
         minlength: 3,
     },
-
+    cid: [{
+        type: String,
+    }],
     certificate: [{ type: mongoose.Schema.Types.ObjectId, ref: 'Certificate' }],
 
     profileURL: {
@@ -34,10 +36,14 @@ const UserSchema = new mongoose.Schema({
     aboutUs: {
         type: String
     },
-    noOfProjects: {
-        type: Number,
-        default: 0,
-    },
+    projects: [{
+        top:{
+            type: String
+        },
+        tech:{
+            type: String
+        }
+    }],
     skills: [{
         topic: {
             type: String,
