@@ -6,6 +6,13 @@
     align-items: flex-start;
     flex-direction: row;
     justify-content: flex-start;
+    background-color: #F6EBF5
+
+    ;
+  }
+  .feature-card21-feature-card:hover{
+    transform: scale(1.05);
+    transition: transform 0.3s ease;
   }
   .feature-card21-icon {
     fill: var(--dl-color-gray-500);
@@ -41,4 +48,8 @@
       flex-direction: column;
     }
   }
-  
+  .project-github-logo{
+    margin-top: 5%;
+    height: 2rem;
+    width: 2rem;
+  }

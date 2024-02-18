@@ -10,8 +10,9 @@ const dummyUserData = [
         ],
       // "certificate": "614ff2f45e2c3e9f0b50ff29",
       "projects": [
-        { top: "Project 1", tech: "JavaScript, HTML, CSS" },
-        { top: "Project 2", tech: "Python, Django" },
+        { top: "Railway management system", tech: "JavaScript, HTML, CSS" },
+        { top: "Social media website", tech: "Python, Django" },
+        { top: "Parking analyser", tech: "MERN stack, JWT authentication"}
         // Additional projects...
       ],
       "aboutUs": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
