@@ -42,6 +42,7 @@ const Login = () => {
           const certificateResponse = await axios.get(
             `http://localhost:3000/api/v1/certificates/${cid}`
           );
+          console.log("Response isss");
           console.log(certificateResponse);
           if (certificateResponse.data) {
             window.location.href = certificateResponse.data.certificateURL;

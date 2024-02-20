@@ -21,7 +21,8 @@ const port = process.env.PORT || 3000;
 
 //Seeding data from json file to the database.
 const seedDB = async() => {
-    // await UserModel.deleteMany({})     //It will delete already existing data in the database.
+    // await UserModel.deleteMany({});     //It will delete already existing data in the database.
+    // await CertificateModel.deleteMany({});
     // await CertificateModel.insertMany(dummyCertificates);
     // await UserModel.insertMany(dummyUserData);
 }

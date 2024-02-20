@@ -14,6 +14,9 @@
     border-top-right-radius: 50px;
     border-bottom-left-radius: 50px;
     border-bottom-right-radius: 50px;
+    /* box-shadow: inset 0 10 10px rgb(249,223,246); */
+    box-shadow: 0 0 50px #cfa2c9;
+    margin-left: 10%;
   }
   .feature-card1-feature-card:hover {
     transform: scale(1.02);

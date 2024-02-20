@@ -7,6 +7,12 @@ const CertificateSchema = new mongoose.Schema({
     },
     certificateURl: {
         type: String
+    },
+    name: {
+        type: String
+    },
+    image: {
+        type: String
     }
 });
 

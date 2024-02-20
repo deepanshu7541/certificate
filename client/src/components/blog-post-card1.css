@@ -10,7 +10,9 @@
   justify-content: center;
 }
 .blog-post-card1-blog-post-card:hover {
-  transform: scale(1.02);
+  transform: scale(1.05);
+  transition: transform 0.3s ease;
+  box-shadow: 10px 10px 10px 10px #f6eaf5;
 }
 .blog-post-card1-image {
   width: 100%;
@@ -24,11 +26,16 @@
   flex-direction: column;
   justify-content: flex-start;
 }
+/* .blog-post-card1-container:hover{
+  transform: scale(1.5);
+  transition: transform 0.3s ease;
+} */
 .blog-post-card1-text {
   color: var(--dl-color-gray-500);
-  font-weight: 700;
+  font-weight: 400;
   margin-bottom: var(--dl-space-space-halfunit);
   text-transform: uppercase;
+  text-decoration: none;
 }
 
 

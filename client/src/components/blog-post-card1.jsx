@@ -1,10 +1,28 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 
 import PropTypes from 'prop-types'
-
+import axios from 'axios';
 import './blog-post-card1.css'
 
 const BlogPostCard1 = (props) => {
+  const { content } = props;
+  console.log('co0000000ntent', content);
+  const [project, setProject] = useState({});
+
+  const fetchData = async () => {
+    const certi = content.cid;
+
+    const url = await axios.get(`http://localhost:3000/api/v1/certificates/${certi}`);
+    if (token === '') {
+      return;
+    }
+
+    // console.log(userData);
+  };
+
+  useEffect(() => {
+    fetchData();
+  }, []);
   return (
     <div className={`blog-post-card1-blog-post-card ${props.rootClassName} `}>
       <img

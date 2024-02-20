@@ -70,43 +70,45 @@ const Home = (props) => {
   const fetchCertificate = async () => {
     const dd = [];
     const certi = profileData.cid;
-    console.log("Certificates:");
-    console.log(certi);
+    // console.log("Certificates:");
+    // console.log(certi);
 
     for (let i = 0; i < certi.length; i++) {
         const c = certi[i];
         try {
             const url = await axios.get(`http://localhost:3000/api/v1/certificates/${c}`);
-            console.log("URL Data:");
-            console.log(url);
+            // console.log("URL Data:");
+            // console.log(url);
 
             dd.push(url.data.certificateURL);
-            console.log("Certificate Data:");
+            // console.log("Certificate Data:");
             // console.log(url.data.certificateURL);
-            console.log(dd);
+            // console.log(dd);
         } catch (error) {
             console.error('Error fetching certificate:', error);
         }
     }
 
-    console.log('ABCD');
+    // console.log('ABCD');
     setarr(dd); // Assuming setarr is a state setter function
-    console.log(setarr);
-    console.log('EFGH');
+    // console.log(setarr);
+    // console.log('EFGH');
 }
 
 
 
   useEffect(() => {
     fetchUserData();
-    fetchCertificate();
+    // fetchCertificate();
     if (token === '') {
       navigate('/login');
       toast.warn('Please login first to access the dashboard');
     }
   }, [token]);  
 
-
+  useEffect(() => {
+    fetchCertificate();
+  }, []);
 
     // const { theme } = useContext(ThemeContext);
 
@@ -124,7 +126,7 @@ const Home = (props) => {
         <div className="home-container01">
           <img
             alt="image"
-            src="https://acods.co.uk/wp-content/uploads/2024/02/Shafaque-Ahmareen.jpeg"
+            src={profileData.profileURL}
             loading="eager"
             className="home-image"
           />
@@ -133,8 +135,7 @@ const Home = (props) => {
         <div className="home-container03">
           <h1 className="home-text">{profileData.name}</h1>
           <span className="home-text1">
-            We will get in touch with you shortly for processing formalities
-            pertaining to your proposal
+            {profileData.aboutUs}
           </span>
           <div className="home-container04">
             <div className="home-social-bar">
@@ -180,8 +181,8 @@ const Home = (props) => {
           <div className='home-blog'>
             {arr.map((item, idx) => (
               <a key={idx} href={item} target="_blank" rel="noopener noreferrer">
-                <BlogPostCard1
-                  imageSrc="https://certification.metafiser.tech/wp-content/uploads/2024/01/H-Colour.png"
+                <BlogPostCard1 content={profileData}
+                  imageSrc={item.image}
                   rootClassName="rootClassName1"
                 ></BlogPostCard1>
               </a>
@@ -229,6 +230,7 @@ const Home = (props) => {
           <div className="home-container169">
             <div className="home-features69">
               <h1 className="home-text69">Tools</h1>
+              <hr />
               <div className="home-container269">
                 <FeatureCard1
                   title="HTML"
