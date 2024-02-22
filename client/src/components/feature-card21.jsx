@@ -6,7 +6,7 @@ import './feature-card21.css'
 
 const FeatureCard21 = (props) => {
   const { content } = props;
-  console.log('content', content);
+  // console.log('content', content);
   const [project, setProject] = useState({});
 
   const fetchData = async () => {

@@ -43,9 +43,9 @@ const Login = () => {
             `http://localhost:3000/api/v1/certificates/${cid}`
           );
           console.log("Response isss");
-          console.log(certificateResponse);
+          console.log(certificateResponse.data.certificate.certificateURl);
           if (certificateResponse.data) {
-            window.location.href = certificateResponse.data.certificateURL;
+            window.location.href = certificateResponse.data.certificate.certificateURl;
           } else {
             toast.error("Certificate not found for the provided CID");
           }

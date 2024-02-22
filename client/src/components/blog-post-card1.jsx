@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react'
-
 import PropTypes from 'prop-types'
 import axios from 'axios';
 import './blog-post-card1.css'
@@ -7,7 +6,13 @@ import './blog-post-card1.css'
 const BlogPostCard1 = (props) => {
   const { content } = props;
   console.log('co0000000ntent', content);
+  // console.log(content);
   const [project, setProject] = useState({});
+
+  const handleClick = () => {
+    // Redirect to a different route
+    history.push();
+  };
 
   const fetchData = async () => {
     const certi = content.cid;
@@ -20,23 +25,42 @@ const BlogPostCard1 = (props) => {
     // console.log(userData);
   };
 
-  useEffect(() => {
-    fetchData();
-  }, []);
+  // useEffect(() => {
+  //   fetchData();
+  // }, []);
   return (
-    <div className={`blog-post-card1-blog-post-card ${props.rootClassName} `}>
-      <img
-        alt={props.imageAlt}
-        src={props.imageSrc}
-        className="blog-post-card1-image"
-      />
-      <div className="blog-post-card1-container">
-        <span className="blog-post-card1-text">CPD UK certificate</span>
-        <button type="button" className="button">
-          {props.download}
-        </button>
-      </div>
-    </div>
+    <>
+      {/* <div className={`blog-post-card1-blog-post-card ${props.rootClassName} `}>
+          <img
+            alt={props.imageAlt}
+            src={props.imageSrc}
+            className="blog-post-card1-image"
+          />
+          <div className="blog-post-card1-container">
+            <span className="blog-post-card1-text">CPD</span>
+            <button type="button" className="button">
+              {props.download}
+            </button>
+          </div>
+        </div> */}
+      {content[0] && content[0].map((item, idx) => (
+        <div className={`blog-post-card1-blog-post-card ${props.rootClassName} `}>
+          <img
+            alt={props.imageAlt}
+            src={item.image}
+            className="blog-post-card1-image"
+          />
+          <div className="blog-post-card1-container">
+            <span className="blog-post-card1-text">{item.name}</span>
+            <a href={item.certificateURl} target="_blank" rel="noopener noreferrer">
+              <button type="button" className="button">
+                {props.download}
+              </button>
+            </a>
+          </div>
+        </div>
+      ))}
+    </>
   )
 }
 

@@ -17,10 +17,10 @@ import { skillsImage } from './skillsImage';
 
 const Home = (props) => {
   const [token, setToken] = useState(JSON.parse(localStorage.getItem('auth')) || '');
-  const [userData, setUserData] = useState({});
   const navigate = useNavigate();
   const [profileData, setProfileData] = useState({});
   const [arr, setarr] = useState([]);
+  const [certiData, setCertiData] = useState([]);
 
   const fetchUserData = async () => {
     if (token === '') {
@@ -69,6 +69,7 @@ const Home = (props) => {
 
   const fetchCertificate = async () => {
     const dd = [];
+    const aa = [];
     const certi = profileData.cid;
     // console.log("Certificates:");
     // console.log(certi);
@@ -78,11 +79,13 @@ const Home = (props) => {
         try {
             const url = await axios.get(`http://localhost:3000/api/v1/certificates/${c}`);
             // console.log("URL Data:");
-            // console.log(url);
+            // console.log(url.data);
 
-            dd.push(url.data.certificateURL);
-            // console.log("Certificate Data:");
-            // console.log(url.data.certificateURL);
+            dd.push(url.data.certificate.certificateURl);
+            // console.log(url.data.certificate.certificateURl);
+            aa.push(url.data.certificate);
+            console.log("Certificate Data:");
+            console.log(url.data.certificate);
             // console.log(dd);
         } catch (error) {
             console.error('Error fetching certificate:', error);
@@ -91,7 +94,9 @@ const Home = (props) => {
 
     // console.log('ABCD');
     setarr(dd); // Assuming setarr is a state setter function
-    // console.log(setarr);
+    certiData.push(aa);
+    console.log("Ceri data");
+    console.log(certiData);
     // console.log('EFGH');
 }
 
@@ -151,6 +156,7 @@ const Home = (props) => {
             </div>
           </div>
         </div>
+
         <div className="skills-scroller-container">
               <h2 className="skills-heading">Skills</h2>
               <hr />
@@ -170,7 +176,9 @@ const Home = (props) => {
                   </div>
                 ))}
               </div>
-                </div>
+          </div>
+        
+          
         <div className="home-container06">
           <div className="home-container07">
             <h1 className="home-text3">Certification</h1>
@@ -179,15 +187,21 @@ const Home = (props) => {
           </div>
           <div className="home-container08">
           <div className='home-blog'>
-            {arr.map((item, idx) => (
-              <a key={idx} href={item} target="_blank" rel="noopener noreferrer">
-                <BlogPostCard1 content={profileData}
-                  imageSrc={item.image}
+            <BlogPostCard1 content={certiData}
+                  imageSrc="https://images.unsplash.com/photo-1547841243-eacb14453cd9?ixid=Mnw5MTMyMXwwfDF8c2VhcmNofDIyfHxjaXR5fGVufDB8fHx8MTYyNjE4NjYxMg&ixlib=rb-1.2.1&w=1000"
+                  rootClassName="rootClassName1"
+                ></BlogPostCard1>
+          </div>
+          {/* <div className='home-blog'>
+            {certiData.map((item, idx) => (
+              <a key={idx} href={item.certificateURl} target="_blank" rel="noopener noreferrer">
+                <BlogPostCard1 content={item}
+                  imageSrc="https://images.unsplash.com/photo-1547841243-eacb14453cd9?ixid=Mnw5MTMyMXwwfDF8c2VhcmNofDIyfHxjaXR5fGVufDB8fHx8MTYyNjE4NjYxMg&ixlib=rb-1.2.1&w=1000"
                   rootClassName="rootClassName1"
                 ></BlogPostCard1>
               </a>
             ))}
-          </div>
+          </div> */}
 
             {/* <div className="home-blog">
               <div className="home-container09">

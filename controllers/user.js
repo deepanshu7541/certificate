@@ -118,8 +118,8 @@ const verify = async(req, res) => {
 
     // Return certificate URL
     console.log(certificate.certificateURl);
-    // res.json({certificate});
-    res.json({ certificateURL: certificate.certificateURl }); // Corrected line
+    res.json({certificate});
+    // res.json({ certificateURL: certificate.certificateURl }); // Corrected line
   } catch (err) {
     console.error('Error during certificate lookup:', err);
     res.status(500).json({ message: 'Internal server error' });

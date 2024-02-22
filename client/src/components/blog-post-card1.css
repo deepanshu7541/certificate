@@ -8,6 +8,7 @@
   align-items: center;
   flex-direction: column;
   justify-content: center;
+  margin-right: 7%;
 }
 .blog-post-card1-blog-post-card:hover {
   transform: scale(1.05);
