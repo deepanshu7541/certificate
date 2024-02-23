@@ -397,6 +397,116 @@ hr {
 /* Slider-tools */
 
 .skills-scroller-container {
+  display: flex;
+  width: 90%; /* Make sure the container spans the entire width */
+}
+
+.left-div,
+.right-div {
+  /* margin-top: 100px; */
+  flex: 1; /* Each box takes up equal space */
+  /* border: 2px solid rgb(255, 253, 253); Add black border */
+  box-sizing: border-box; /* Include border in box dimensions */
+  max-width: calc(50% - 4px); /* Set maximum width for each box */
+  overflow: auto; /* Add scrollbars if content overflows */
+}
+
+.right-div{
+  /* margin-top: 100px; */
+  padding-top: 4.5%;
+  margin-left: 6%;
+}
+
+.skills-heading {
+  font-size: 2em; /* Adjust font size as needed */
+  margin-bottom: 10px;
+  font-weight: 400; /* Use regular font weight */
+}
+
+.skills-scroller {
+  width: 100%; /* Make the scroller container full width */
+  display: flex;
+  flex-direction: column;
+  /* Remove max-width, set margin to auto for centering */
+  /* margin: 0 auto; */
+}
+
+.skill-item {
+  /* top: 10%; */
+  display: flex;
+  /* align-items: center;*/
+  margin-bottom: 30px; /* Adjust margin as needed */
+}
+
+.skill-image {
+  top: 10%;
+  height: 30px;
+  width: 30px;
+  margin-right: 10px;
+  vertical-align: middle;
+}
+
+.skill-name {
+  display: flex;
+  font-size: 1em; /* Adjust font size as needed */
+  margin-right: 20px; /* Add margin to the right */
+  align-self: flex-start;
+}
+
+.skill-bar {
+  flex: 1; /* Make skill bar take up remaining space */
+  height: 30px;
+  background-color: #e0e0e0;
+  border-radius: 15px;
+  overflow: hidden;
+}
+
+.skill-progress {
+  height: 100%;
+  background-color: black;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center; /* Add text alignment for centered text */
+}
+
+.skills-scroller {
+  width: 100%; /* Make the scroller container full width */
+}
+
+.skill-item {
+  display: flex; /* Make skill item a flex container */
+  flex-direction: column; /* Stack name and bar vertically */
+  align-items: center; /* Center content horizontally */
+  margin-bottom: 30px; /* Adjust margin as needed */
+}
+
+.skill-name {
+  font-size: 1em; /* Adjust font size as needed */
+  margin-bottom: 10px; /* Add margin to the bottom */
+}
+
+.skill-bar {
+  width: 100%; /* Make skill bar take up full width */
+  height: 30px;
+  background-color: #e0e0e0;
+  border-radius: 15px;
+  overflow: hidden;
+}
+
+.skill-progress {
+  height: 100%;
+  background-color: black;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center; /* Add text alignment for centered text */
+}
+
+/*
+.skills-scroller-container {
   margin-top: 0px;
 }
 
@@ -409,7 +519,7 @@ hr {
   width: 50%;
   display: flex;
   flex-direction: column;
-  max-width: 1000px; /* Adjust as needed */
+  max-width: 1000px;
   margin-left: 25%;
   margin-right: 25%;
 }
@@ -419,14 +529,12 @@ hr {
 }
 
 .skill-name {
-  /* font-weight: bold; */
   font-size: 30px ;
 }
 
 .skill-bar {
   height: 30px;
   background-color: #e0e0e0;
-  /* border-radius: 15px; */
   overflow: hidden;
 }
 
@@ -448,6 +556,7 @@ hr {
 .skill-name{
   font-size: 1em;
 }
+*/
 
 /* TOOLS SECTION */
 .home-container69 {

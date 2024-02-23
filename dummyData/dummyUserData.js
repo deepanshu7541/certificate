@@ -19,8 +19,12 @@ const dummyUserData = [
       "noOfProjects": 3,
       "skills": [
         { topic: "JavaScript", percentage: 80 },
-        { topic: "Node.js", percentage: 90 },
-        { topic: "React", percentage: 70 }
+        { topic: "Canva", percentage: 90 },
+        { topic: "React", percentage: 70 },
+        { topic: "Typescript", percentage: 80 },
+        { topic: "MongoDB", percentage: 90 },
+        { topic: "Python", percentage: 70 },
+        { topic: "php", percentage: 80 }
     ],
     "profileURL": "https://media.licdn.com/dms/image/C4E03AQGUCuOfVRb9kQ/profile-displayphoto-shrink_800_800/0/1616183353350?e=1714003200&v=beta&t=xcXtFNV0V1aDcB9lR8seofSIvlOQQ54rWfOSTwRlFpY",
       "socialProfiles": {
@@ -52,9 +56,13 @@ const dummyUserData = [
       "aboutUs": "My name is Deepanshu chand and I am persuing CPD UK program from acods.uk",
       "noOfProjects": 3,
       "skills": [
-        { topic: "Angular", percentage: 10 },
-        { topic: "Python", percentage: 20 },
-        { topic: "Java", percentage: 30 }
+        { topic: "JavaScript", percentage: 80 },
+        { topic: "Canva", percentage: 90 },
+        { topic: "React", percentage: 70 },
+        { topic: "Typescript", percentage: 80 },
+        { topic: "MongoDB", percentage: 90 },
+        { topic: "Python", percentage: 70 },
+        { topic: "php", percentage: 80 }
     ],
     "profileURL": "https://lh3.googleusercontent.com/a/ACg8ocK1BVgn3p2Lznn1yWuVFGTd_HurdvnsYPMAxHgu0pG5hg=s576-c-no",
       "socialProfiles": {

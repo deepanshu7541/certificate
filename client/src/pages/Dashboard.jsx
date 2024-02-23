@@ -113,7 +113,7 @@ const Home = (props) => {
 
   useEffect(() => {
     fetchCertificate();
-  }, []);
+  });
 
     // const { theme } = useContext(ThemeContext);
 
@@ -158,6 +158,46 @@ const Home = (props) => {
         </div>
 
         <div className="skills-scroller-container">
+  <div className="left-div skills-scroller">
+    <h2 className="skills-heading">Skills</h2>
+    <hr />
+    <br />
+    {profileData.skills &&
+      profileData.skills.slice(0, 4).map((skillItem, index) => (
+        <div key={index} className="skill-item">
+          {/* <img src={skillsImage(skillItem.topic)} alt={skillItem.topic} className="skill-image"/> */}
+          <div className="skill-name"><span><img src={skillsImage(skillItem.topic)} alt={skillItem.topic} className="skill-image"/></span>{skillItem.topic}</div>
+          <div className="skill-bar">
+            <div
+              className="skill-progress"
+              style={{ width: `${skillItem.percentage}%` }}
+            >
+              {skillItem.percentage}%
+            </div>
+          </div>
+        </div>
+      ))}
+  </div>
+  <div className="right-div skills-scroller">
+    <br />
+    {profileData.skills &&
+      profileData.skills.slice(4).map((skillItem, index) => (
+        <div key={index} className="skill-item">
+          <div className="skill-name"><span><img src={skillsImage(skillItem.topic)} alt={skillItem.topic} className="skill-image"/></span>{skillItem.topic}</div>
+          <div className="skill-bar">
+            <div
+              className="skill-progress"
+              style={{ width: `${skillItem.percentage}%` }}
+            >
+              {skillItem.percentage}%
+            </div>
+          </div>
+        </div>
+      ))}
+  </div>
+</div>
+
+        {/* <div className="skills-scroller-container">
               <h2 className="skills-heading">Skills</h2>
               <hr />
               <br />
@@ -176,7 +216,7 @@ const Home = (props) => {
                   </div>
                 ))}
               </div>
-          </div>
+          </div> */}
         
           
         <div className="home-container06">
