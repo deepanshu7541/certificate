@@ -113,7 +113,7 @@ const Home = (props) => {
 
   useEffect(() => {
     fetchCertificate();
-  });
+  }, []);
 
     // const { theme } = useContext(ThemeContext);
 

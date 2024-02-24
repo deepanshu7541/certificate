@@ -73,6 +73,15 @@ import sketch from '../assets/svg/skills/sketch.svg'
 import unity from '../assets/svg/skills/unity.svg'
 import wolframalpha from '../assets/svg/skills/wolframalpha.svg'
 import canva from '../assets/svg/skills/canva.svg'
+import lookerstudio from '../assets/svg/skills/lookerstudio.svg';
+import powerbi from '../assets/svg/skills/powerbi.svg';
+import tableau from '../assets/svg/skills/tableau.svg';
+import pandas from '../assets/svg/skills/Pandas.svg';
+import jupyter from '../assets/svg/skills/Jupyter.svg';
+import matplotlib from '../assets/svg/skills/matplotlib.svg';
+import scikitlearn from '../assets/svg/skills/scikit-learn.svg';
+import keras from '../assets/svg/skills/keras.svg';
+import kaggle from '../assets/svg/skills/kaggle.svg';
 
 
 export const skillsImage = (skill) => {
@@ -226,6 +235,24 @@ export const skillsImage = (skill) => {
             return wolframalpha;
         case 'canva':
             return canva;
+        case 'lookerstudio':
+            return lookerstudio;
+        case 'powerbi':
+            return powerbi;
+        case 'tableau':
+            return tableau; 
+        case 'pandas':
+            return pandas;
+        case 'jupyter':
+            return jupyter;
+        case 'matplotlib':
+            return matplotlib;
+        case 'scikitlearn':
+            return scikitlearn;
+        case 'keras':
+            return keras;
+        case 'kaggle':
+            return kaggle;
         default:
             break;
     }
